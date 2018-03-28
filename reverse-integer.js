@@ -1,7 +1,7 @@
 const inputs = [123, -123, 120, 0];
 
-const max32 = Math.pow(2, 31) - 1;
-const min32 = ~max32;
+const max32 = Math.pow(2, 31) - 1; // 0x7fffffff
+const min32 = ~max32; // -0x80000000
 const reverse = (x) => {
     const splitted = x.toString().split('');
     const result = [];
