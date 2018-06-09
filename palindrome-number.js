@@ -20,4 +20,20 @@ const isPalindrome = x => {
     return true;
 };
 
-numbers.forEach(i => console.log(`${i};${isPalindrome(i)}`));
+// numbers.forEach(i => console.log(`${i};${isPalindrome(i)}`));
+
+const isPalindromeNew = x => {
+    if (x < 0 || (x !== 0 && x % 10 === 0)) return false;
+    let reversed = 0;
+    while (x > reversed) {
+        reversed *= 10;
+        reversed += x % 10;
+        x = ~~(x / 10);
+    }
+
+    return (x === reversed || x === ~~(reversed / 10));
+};
+
+numbers.length = 0;
+numbers.push(5);
+numbers.forEach(i => console.log(`${isPalindromeNew(i)}`));
